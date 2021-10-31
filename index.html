@@ -629,7 +629,7 @@
                 style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
                 <div class="dplugin-mobile dplugin-mobile-dinput dinput-vie dplugin-mobile-dinput-focusalert"
                   style="font-size: 18px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: red; text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;">
-                  <span
+                  <span id="allow_text" onclick="exchangeAllowText()"
                     style="font-size: 18px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: green; text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;">允许出校</span>
                 </div>
               </div>
@@ -905,5 +905,14 @@
 			var time = currentDate.toLocaleString('chinese', { hour12: false }).split('/').join('-');
 			document.getElementById("current_time").innerHTML = time;
         }
-    </script>
+		
+		function exchangeAllowText () {
+			var element = document.getElementById("allow_text")
+			if(element.innerHTML=="允许出校"){
+				element.innerHTML = "允许入校";
+			} else {
+				element.innerHTML = "允许出校";
+			}
+		}
+</script>
 </html>
